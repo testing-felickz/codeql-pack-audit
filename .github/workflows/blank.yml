@@ -1,0 +1,12 @@
+name: CodeQL query suite audit
+
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Runs a set of commands using the runners shell
+      - name: Resolve Queries
+        run: |
+          codeql resolve queries codeql/cpp-queries:codeql-suites/cpp-security-and-quality.qls
